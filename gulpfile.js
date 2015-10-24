@@ -2,16 +2,19 @@ var gulp = require('gulp');
 var gp_deploy = require('gulp-gh-pages');
 var open = require("gulp-open");
 var rename = require("gulp-rename");
+require('shelljs/global');
 
-var options = {force:true}
+var options = {}
 gulp.task('deploy', function () {
   return gulp.src('./preview/**/*')
     .pipe(gp_deploy(options));
 });
 
 gulp.task('rename',function () {
-  return gulp.src('./preview/README.html')
-    .pipe(gulp.dest('./preview/index.html'));
+  if (exec('cp ./preview/README.html ./preview/index.html').code !== 0) {
+	  echo('Error: rename exec failed');
+	  exit(1);
+	}	
 });
 
 gulp.task('copy_img',function () {

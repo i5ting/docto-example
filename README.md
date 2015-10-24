@@ -1,6 +1,6 @@
 # docto-example
 
-docto-example is a node module for docto demo show.
+docto-example is a node module for xxx.
 
 [![npm version](https://badge.fury.io/js/docto-example.svg)](http://badge.fury.io/js/docto-example)
 
