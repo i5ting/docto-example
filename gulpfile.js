@@ -3,7 +3,7 @@ var gp_deploy = require('gulp-gh-pages');
 var open = require("gulp-open");
 var rename = require("gulp-rename");
 
-var options = {}
+var options = {force:true}
 gulp.task('deploy', function () {
   return gulp.src('./preview/**/*')
     .pipe(gp_deploy(options));
